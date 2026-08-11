@@ -186,7 +186,7 @@ function LandingPage() {
             },
             {
               name: 'Diego A.',
-              text: 'Treino em casa e achei que não teria resultado. Me enganei — o plano de 12 semanas funciona de verdade.',
+              text: 'Sempre travava depois de duas semanas. Dessa vez segui o plano até o fim e o resultado apareceu de verdade.',
             },
           ].map((t, i) => (
             <div
@@ -231,7 +231,7 @@ function LandingPage() {
             <ul className="mb-8 space-y-3 text-left">
               {[
                 'Ebook completo em PDF (acesso imediato)',
-                'Fichas de treino para casa e academia',
+                'Fichas de treino para academia',
                 'Guia de nutrição e montagem de dieta',
                 'Plano de progressão de 12 semanas',
                 'Garantia incondicional de 7 dias',
