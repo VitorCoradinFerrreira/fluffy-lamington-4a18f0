@@ -223,7 +223,7 @@ function LandingPage() {
               <span className="text-xl text-zinc-500 line-through">
                 R$ 97
               </span>
-              <span className="text-5xl font-black">R$ 47</span>
+              <span className="text-5xl font-black">R$ 19,90</span>
             </div>
             <p className="mb-6 text-sm text-zinc-500">
               Pagamento único · sem mensalidade
