@@ -36,7 +36,7 @@ function LandingPage() {
           <div className="flex items-center gap-2 font-black text-lg tracking-tight">
             <Dumbbell className="h-6 w-6 text-orange-500" />
             <span>
-              FORJA<span className="text-orange-500">FIT</span>
+              GYM<span className="text-orange-500">NATTY</span>
             </span>
           </div>
           <a
@@ -65,8 +65,7 @@ function LandingPage() {
             <p className="mb-8 text-lg leading-relaxed text-zinc-400">
               Um ebook direto ao ponto: treinos, periodização e nutrição
               explicados em linguagem simples, para você sair do zero (ou do
-              platô) e ver resultado real em até 90 dias — treinando em casa
-              ou na academia.
+              platô) e ver resultado real em até 90 dias.
             </p>
             <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
               <CtaButton />
@@ -84,7 +83,7 @@ function LandingPage() {
             <div className="relative w-full max-w-sm">
               <div className="absolute -inset-4 -z-10 rounded-3xl bg-orange-500/20 blur-2xl" />
               <img
-                src="/placeholder.png"
+                src="/placeholder.webp"
                 alt="Capa do ebook Guia de Treinos Fitness"
                 className="aspect-[3/4] w-full rounded-2xl border border-zinc-800 object-cover shadow-2xl"
               />
@@ -127,38 +126,45 @@ function LandingPage() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {[
               {
-                icon: Dumbbell,
+                img: '/treinos-por-objetivo.webp',
                 title: 'Treinos por objetivo',
                 desc: 'Fichas de treino para hipertrofia, definição e condicionamento, em casa ou na academia.',
               },
               {
-                icon: Timer,
+                img: '/periodizacao.webp',
                 title: 'Periodização de 12 semanas',
                 desc: 'Progressão semana a semana para você nunca estagnar no mesmo treino.',
               },
               {
-                icon: Utensils,
+                img: '/dieta.webp',
                 title: 'Guia de nutrição',
                 desc: 'Como montar suas refeições e ajustar calorias sem depender de dieta restritiva.',
               },
               {
-                icon: ShieldCheck,
+                img: '/execucao-correta.webp',
                 title: 'Execução correta',
                 desc: 'Explicação de cada exercício para treinar com segurança e evitar lesões.',
               },
-            ].map((item, i) => {
-              const Icon = item.icon
-              return (
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="group relative h-72 overflow-hidden rounded-2xl border border-zinc-800 transition hover:border-orange-500/50"
+              >
+                {/* imagem de fundo com leve zoom no hover */}
                 <div
-                  key={i}
-                  className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6"
-                >
-                  <Icon className="mb-4 h-8 w-8 text-orange-500" />
+                  className="absolute inset-0 bg-cover bg-center transition duration-500 group-hover:scale-105"
+                  style={{ backgroundImage: `url(${item.img})` }}
+                />
+                {/* degradê: transparente em cima, escuro embaixo */}
+                <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-zinc-950/10" />
+
+                {/* conteúdo ancorado embaixo */}
+                <div className="relative flex h-full flex-col justify-end p-6">
                   <h3 className="mb-2 text-lg font-bold">{item.title}</h3>
-                  <p className="text-sm text-zinc-400">{item.desc}</p>
+                  <p className="text-sm text-zinc-300">{item.desc}</p>
                 </div>
-              )
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -253,8 +259,8 @@ function LandingPage() {
         <div className="space-y-4">
           {[
             {
-              q: 'Preciso ter equipamentos ou academia?',
-              a: 'Não. O ebook traz treinos adaptados para casa (com peso do corpo ou halteres) e para academia, você escolhe o que combina com sua rotina.',
+              q: 'Preciso de algum aparelho específico pra seguir o guia?',
+              a: 'Não. Os treinos foram montados pra funcionar com o que você tiver disponível, de halteres básicos até equipamentos de academia completa.',
             },
             {
               q: 'Sou totalmente sedentário, funciona para mim?',
